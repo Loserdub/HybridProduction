@@ -1,0 +1,5 @@
+{
+  "name": "Interactive Periodic Table with Tones",
+  "description": "An interactive periodic table where clicking on an element plays a unique musical tone corresponding to its atomic number. Explore chemical elements with auditory feedback.",
+  "requestFramePermissions": []
+}
