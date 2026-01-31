@@ -1,37 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The Sonic Periodic Table - An interactive periodic table where clicking on an element plays a unique musical tone. Explore chemical elements with auditory feedback." />
+    <meta name="description" content="jray.me - Personal web space for custom projects and pages" />
     <meta name="author" content="jray.me" />
-    <meta property="og:title" content="The Sonic Periodic Table" />
-    <meta property="og:description" content="An interactive periodic table where clicking on an element plays a unique musical tone. Explore chemical elements with auditory feedback." />
+    <meta property="og:title" content="jray.me" />
+    <meta property="og:description" content="Personal web space for custom projects and pages" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Sonic Periodic Table" />
-    <meta name="twitter:description" content="An interactive periodic table where clicking on an element plays a unique musical tone." />
-    <title>The Sonic Periodic Table | jray.me</title>
+    <meta name="twitter:title" content="jray.me" />
+    <meta name="twitter:description" content="Personal web space for custom projects and pages" />
+    <title>jray.me</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              'alkali-metal': '#f9a8d4',
-              'alkaline-earth-metal': '#fde047',
-              'lanthanide': '#fca5a5',
-              'actinide': '#f97316',
-              'transition-metal': '#67e8f9',
-              'post-transition-metal': '#a78bfa',
-              'metalloid': '#6ee7b7',
-              'diatomic-nonmetal': '#93c5fd',
-              'polyatomic-nonmetal': '#93c5fd',
-              'noble-gas': '#d8b4fe',
-              'unknown': '#9ca3af',
-            },
             animation: {
               'fade-in': 'fadeIn 0.5s ease-in-out',
             },
@@ -45,17 +31,9 @@
         }
       }
     </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
-  }
-}
-</script>
-</head>
-  <body class="bg-gray-900 text-white">
+  </head>
+  <body>
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
