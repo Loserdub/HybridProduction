@@ -35,6 +35,17 @@ const App: React.FC = () => {
       </main>
       <footer className="text-center text-gray-500 mt-8 text-sm">
         <p>Tones generated using the Web Audio API. Frequency based on atomic number.</p>
+        <p className="mt-2">
+          Made with ❤️ by{' '}
+          <a 
+            href="https://jray.me" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors"
+          >
+            jray.me
+          </a>
+        </p>
       </footer>
     </div>
   );
