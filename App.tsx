@@ -1,41 +1,92 @@
-
-import React, { useState, useCallback } from 'react';
-import { PeriodicTable } from './components/PeriodicTable';
-import { ElementDetail } from './components/ElementDetail';
-import { ElementData } from './types';
-import { playTone } from './services/audioService';
+import React from 'react';
 
 const App: React.FC = () => {
-  const [selectedElement, setSelectedElement] = useState<ElementData | null>(null);
-
-  const handleElementClick = useCallback((element: ElementData) => {
-    setSelectedElement(element);
-    // Formula to map atomic number to a musical frequency on a logarithmic scale
-    // Base frequency of 80Hz, doubles every 24 elements (2 octaves)
-    const frequency = 80 * Math.pow(2, element.number / 24);
-    playTone(frequency);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200 font-sans p-4 sm:p-6 lg:p-8">
-      <div className="text-center mb-6">
-        <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
-          The Sonic Periodic Table
-        </h1>
-        <p className="text-gray-400 mt-2">Click an element to see its details and hear its resonant tone.</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-gray-100 font-sans">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="text-6xl sm:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-fade-in">
+              Welcome to jray.me
+            </h1>
+            <p className="text-xl sm:text-2xl text-gray-300 mb-8">
+              Your personal web space
+            </p>
+          </div>
 
-      <main className="flex flex-col lg:flex-row gap-6 max-w-screen-2xl mx-auto">
-        <div className="flex-grow">
-          <PeriodicTable onElementClick={handleElementClick} selectedElementNumber={selectedElement?.number ?? null} />
+          {/* Main Content Area */}
+          <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-2xl shadow-2xl p-8 sm:p-12 mb-8">
+            <div className="space-y-6">
+              <div className="text-center">
+                <svg 
+                  className="w-24 h-24 mx-auto mb-6 text-cyan-400" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" 
+                  />
+                </svg>
+                <h2 className="text-3xl font-semibold mb-4 text-white">
+                  Ready to Build
+                </h2>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  This is your blank canvas. Add your own content, components, and pages here.
+                  <br />
+                  Start by editing <code className="bg-gray-700 px-2 py-1 rounded text-cyan-300">App.tsx</code>
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div className="bg-gray-700 bg-opacity-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-cyan-400">📁 Add Files</h3>
+                  <p className="text-gray-300 text-sm">
+                    Add your own HTML, CSS, and JavaScript files to this project
+                  </p>
+                </div>
+                <div className="bg-gray-700 bg-opacity-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-purple-400">⚡ Built with Vite</h3>
+                  <p className="text-gray-300 text-sm">
+                    Fast development server with hot module replacement
+                  </p>
+                </div>
+                <div className="bg-gray-700 bg-opacity-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-pink-400">🎨 Styled with Tailwind</h3>
+                  <p className="text-gray-300 text-sm">
+                    Utility-first CSS framework for rapid UI development
+                  </p>
+                </div>
+                <div className="bg-gray-700 bg-opacity-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-green-400">🚀 Ready to Deploy</h3>
+                  <p className="text-gray-300 text-sm">
+                    Build with <code className="bg-gray-600 px-1 rounded">npm run build</code>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <footer className="text-gray-400 text-sm">
+            <p>
+              Made with ❤️ by{' '}
+              <a 
+                href="https://jray.me" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
+              >
+                jray.me
+              </a>
+            </p>
+          </footer>
         </div>
-        <div className="lg:w-80 lg:flex-shrink-0">
-          <ElementDetail element={selectedElement} />
-        </div>
-      </main>
-      <footer className="text-center text-gray-500 mt-8 text-sm">
-        <p>Tones generated using the Web Audio API. Frequency based on atomic number.</p>
-      </footer>
+      </div>
     </div>
   );
 };
